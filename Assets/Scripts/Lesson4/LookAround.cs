@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Zadanie4 : MonoBehaviour
+public class LookAround : MonoBehaviour
 {
     // ruch wokół osi Y będzie wykonywany na obiekcie gracza, więc
     // potrzebna nam referencja do niego (konkretnie jego komponentu Transform)
@@ -27,6 +27,7 @@ public class Zadanie4 : MonoBehaviour
         // wykonujemy rotację wokół osi Y
         player.Rotate(Vector3.up * mouseXMove);
 
+        //Ograniczenie osi Y
         xRotation -= mouseYMove;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 

@@ -11,10 +11,6 @@ public class MoveWithCharacterController : MonoBehaviour
     private float jumpHeight = 1.0f;
     private float gravityValue = -9.81f;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        playerVelocity.y += Mathf.Sqrt(jumpHeight *3 * -3.0f * gravityValue);
-    }
     private void Start()
     {
         // zakładamy, że komponent CharacterController jest już podpięty pod obiekt
@@ -56,5 +52,14 @@ public class MoveWithCharacterController : MonoBehaviour
         // zgodnie ze wzorem y = (1/2 * g) * t-kwadrat 
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
+    }
+
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.tag == "Launcher")
+        {
+            Debug.Log("W gore");
+            playerVelocity.y += Mathf.Sqrt(jumpHeight * 3 * -3.0f * gravityValue);
+        }
     }
 }
