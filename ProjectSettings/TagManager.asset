@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Obstacle
+  - Launcher
+  - Elevator
+  - door1
+  - door2
   layers:
   - Default
   - TransparentFX

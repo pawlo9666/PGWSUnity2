@@ -38,11 +38,7 @@ public class MoveWithCharacterController : MonoBehaviour
         Vector3 move = transform.right * moveX + transform.forward * moveZ;
         controller.Move(move * Time.deltaTime * playerSpeed);
 
-        // to już nam potrzebne nie będzie
-        //if (move != Vector3.zero)
-        //{
-        //    gameObject.transform.forward = move;
-        //}
+    
 
         if (Input.GetButtonDown("Jump") && groundedPlayer)
         {
@@ -59,7 +55,9 @@ public class MoveWithCharacterController : MonoBehaviour
         if (hit.gameObject.tag == "Launcher")
         {
             Debug.Log("W gore");
-            playerVelocity.y += Mathf.Sqrt(jumpHeight * 3 * -3.0f * gravityValue);
+            playerVelocity.y += Mathf.Sqrt(jumpHeight * 3* -3.0f * gravityValue);
         }
     }
+
+
 }
