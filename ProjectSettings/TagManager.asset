@@ -9,6 +9,7 @@ TagManager:
   - Elevator
   - door1
   - door2
+  - TurningPoint
   layers:
   - Default
   - TransparentFX
